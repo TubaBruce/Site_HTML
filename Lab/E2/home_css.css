@@ -1,0 +1,23 @@
+div p{
+    color:red;
+}
+
+#Links{
+    color:blue
+}
+#Links:hover{
+    color:blueviolet;
+    font-size: 15pt;
+}
+
+div p{
+    color:darkolivegreen;
+}
+
+.link_entre_sites{
+    color:darkblue;
+}
+
+.link_entre_sites:hover{
+    font-size: 15pt;
+}
