@@ -1,15 +1,17 @@
 function verificarChute() {
-    const chute = document.getElementById('chute').value;
-    const numeroAleatorio = Math.floor(Math.random() * 10); // Gera um número aleatório entre 0 e 9
+    const chuteInput = document.getElementById('chute');
+    const chute = parseInt(chuteInput.value);
+    const numeroAleatorio = Math.floor(Math.random() * 10);
+    const resultado = document.getElementById('resultado');
 
-    while (chute != numeroAleatorio) {
+    while (chute !== numeroAleatorio) {
         if (chute > numeroAleatorio) {
-            document.getElementById('resultado').textContent = "O número secreto é menor.";
-        } else {
-            document.getElementById('resultado').textContent = "O número secreto é maior.";
+            resultado.textContent = "O número secreto é menor.";
         }
-        chute = prompt("Tente novamente: ");
+        else if (chute < numeroAleatorio){
+            resultado.textContent = "O número secreto é maior.";
+        }
     }
 
-    document.getElementById('resultado').textContent = "Parabéns! Você acertou!";
+    resultado.textContent = "Parabéns! Você acertou!";
 }
