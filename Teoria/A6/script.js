@@ -2,45 +2,66 @@ const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
 // Desenhando as linhas
-ctx.beginPath();
-ctx.moveTo(20, 20);
-ctx.lineTo(380, 280);
-ctx.strokeStyle = "red";
-ctx.stroke();
+
+//ajustar linha passar por cima do quadrado amarelo
 
 ctx.beginPath();
-ctx.moveTo(20, 280);
-ctx.lineTo(380, 20);
-ctx.strokeStyle = "blue";
+ctx.moveTo(0, 100);
+ctx.lineTo(200, 100);
+ctx.strokeStyle = "green";
 ctx.stroke();
 
 // Desenhando os quadrados
 ctx.fillStyle = "red";
-ctx.fillRect(10, 10, 20, 20);
+ctx.fillRect(0, 0, 20, 20);
 
 ctx.fillStyle = "yellow";
-ctx.fillRect(10, 260, 20, 20);
+ctx.fillRect(0, 180, 20, 20);
 
 ctx.fillStyle = "green";
-ctx.fillRect(360, 260, 20, 20);
+ctx.fillRect(180, 180, 20, 20);
+
+ctx.fillStyle = "blue";
+ctx.fillRect(180, 0, 20, 20);
 
 // Desenhando os círculos
 ctx.beginPath();
-ctx.arc(120, 120, 20, 0, Math.PI * 2);
+ctx.lineWidth = 1;
+ctx.strokeStyle = 'green';
+ctx.arc(40, 80, 10, 0, Math.PI * 2);
 ctx.fillStyle = "yellow";
+ctx.stroke();
 ctx.fill();
 
 ctx.beginPath();
-ctx.arc(280, 120, 20, 0, Math.PI * 2);
+ctx.lineWidth = 1;
+ctx.strokeStyle = 'green';
+ctx.arc(160, 80, 10, 0, Math.PI * 2);
 ctx.fillStyle = "yellow";
+ctx.stroke();
 ctx.fill();
 
 // Desenhando o arco
 ctx.beginPath();
-ctx.arc(200, 200, 100, Math.PI, 0);
+ctx.arc(100, 100, 50, 0, Math.PI);
 ctx.strokeStyle = "green";
+ctx.lineWidth = 1;
 ctx.stroke();
 
 // Adicionando o texto
-ctx.font = "20px Arial";
-ctx.fillText("Desenvolvimento Web", 100, 100);
+ctx.font = "10px Arial";
+ctx.fillText("Desenvolvimento Web", 50, 50);
+
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.lineTo(200, 200);
+ctx.strokeStyle = "red";
+ctx.lineWidth = 1;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(0, 200);
+ctx.lineTo(180, 20);
+ctx.strokeStyle = "blue";
+ctx.lineWidth = 1;
+ctx.stroke();
