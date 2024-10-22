@@ -1,13 +1,15 @@
-var http = require('http');
+require('colors');
 
-var express = require('express');
+let http = require('http');
 
-var app = express();
+let express = require('express');
+
+let app = express();
 
 app.use(express.static('./public'));
 
-var server = http.createServer(app);
+let server = http.createServer(app);
 
-server.listen(300);
-while (True):
-    console.log("servidor rodando...");
+server.listen(3000);
+
+console.log('servidor rodando...');
