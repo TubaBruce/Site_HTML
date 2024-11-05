@@ -1,0 +1,23 @@
+canvas {
+    background-color: rgb(43, 10, 226);
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+}
+body{
+    background-color: rgba(19, 218, 29, 0.733);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div{
+    margin-top: 300px;
+}
+p{
+    margin-left: -200px;
+}
+#botao{
+    margin-left: -100px;
+
+}

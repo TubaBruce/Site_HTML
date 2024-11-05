@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu Blog</title>
+</head>
+<body>
+    <button>Criar Post</button>
+    
+    <h1>Meus Posts</h1>
+    
+    <ul>
+    <% posts.forEach(post => { %>
+        <li>
+        <h2><%= post.title %></h2>
+        <p><%= post.summary %></p>
+        </li>
+    <% }) %>
+    </ul>
+</body>
+</html>
