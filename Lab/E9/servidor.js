@@ -72,7 +72,7 @@ app.get('/obter_posts', async (req, res) => {
   client.db("FDB").collection("Posts_Blog").find({}).toArray(function(err, items) {
       if (err) {
           console.log(err);
-          res.render('resposta.ejs', { resposta: "erro", mensagem: "Erro ao obter posts" });
+          res.render('resposta_post.ejs', { resposta: "erro", mensagem: "Erro ao obter posts" });
       } else {
           console.log(items);
           res.render('blog.ejs', { posts: items });

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+    <head>
+
+        <title>Blog</title>
+
+    </head>
+
+    <body>
+        <h1>Posts do Blog</h1>
+        <a href="cria_post.html">Novo Post</a>
+        <hr>
+        <div>
+            <% posts.forEach(post => { %>
+                <div style="border: 1px solid #000; margin: 10px; padding: 10px;">
+                    <h2><%= post.db_titulo %></h2>
+                    <p><%= post.db_resumo %></p>
+                    <div><%= post.db_conteudo %></div>
+                </div>
+            <% }); %>
+        </div>
+    </body>
+</html>

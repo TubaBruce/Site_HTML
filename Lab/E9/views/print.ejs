@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Imprime</title>
+    </head>
+
+    <body>
+
+        <h1>Blog</h1>
+        <a href="criar_post.html">Novo Post</a>
+        <hr>
+        <div id="posts">
+            <div class="post">
+                <h2>Título do Post</h2>
+                <p>Conteudo do post.</p>
+            </div>
+        </div>
+
+    
+        <h1>Imprime</h1>
+
+
+        <p>Quantidade de divs: <%= qtd %></p>
+        <div>
+            <% for (let i = 0; i < qtd; i++) { %>
+                <div style="width: 100px; height: 100px; background-color: blue; margin: 10px; float: left;"></div>
+            <% } %>
+        </div>
+</html>
