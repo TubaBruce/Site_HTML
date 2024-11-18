@@ -50,6 +50,36 @@ app.post("/login", function(req, res){
         });
    
 });
+
+app.post('/criar_post', async (req, res) => {
+  const newPost = {
+      titulo: req.body.post_titulo,
+      resumo: req.body.post_resumo,
+      conteudo: req.body.post_conteudo,
+  };
+  client.db("FDB").collection("Posts_Blog").insertOne(
+      { db_titulo: newPost.titulo, db_resumo: newPost.resumo, db_conteudo: newPost.conteudo }, function (err) {
+      if (err) {
+        res.render('resposta_post.ejs', {resposta: "erro", mensagem: "Erro ao cadastrar"});
+      }else {
+        res.render('resposta_post.ejs', {resposta: "sucesso", mensagem: "Post cadastrado com sucesso"});
+            
+      };
+    });
+});
+
+app.get('/obter_posts', async (req, res) => {
+  client.db("FDB").collection("Posts_Blog").find({}).toArray(function(err, items) {
+      if (err) {
+          console.log(err);
+          res.render('resposta.ejs', { resposta: "erro", mensagem: "Erro ao obter posts" });
+      } else {
+          console.log(items);
+          res.render('blog.ejs', { posts: items });
+      }
+  });
+});
+
 let server = http.createServer(app);
 server.listen(80);
 
