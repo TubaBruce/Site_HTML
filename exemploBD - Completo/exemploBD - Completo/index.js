@@ -64,7 +64,7 @@ app.get("/listar_usuarios", function(req, resp) {
 
     // busca todos os usuarios no banco de dados
     client
-      .db("exemplo_bd")
+      .db("FDB")
       .collection("usuarios")
       .find().toArray(function(err, items) {
         // renderiza a resposta para o navegador
@@ -77,7 +77,7 @@ app.get("/listar_usuarios", function(req, resp) {
 app.post("/atualizar_usuario", function(req, resp) {
 
     // atualiza senha do usuário
-    client.db("exemplo_bd").collection("usuarios").updateOne(
+    client.db("FDB").collection("usuarios").updateOne(
         { db_login: req.body.login, db_senha: req.body.senha }, 
         { $set: {db_senha: req.body.novasenha} }, function (err, result) {
           console.log(result);
@@ -96,7 +96,7 @@ app.post("/atualizar_usuario", function(req, resp) {
 app.post("/remover_usuario", function(req, resp) {
 
     // remove do usuário
-    client.db("exemplo_bd").collection("usuarios").deleteOne(
+    client.db("FDB").collection("usuarios").deleteOne(
       { db_login: req.body.login, db_senha: req.body.senha } , function (err, result) {
         console.log(result);
         if (result.deletedCount == 0) {
