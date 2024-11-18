@@ -15,14 +15,11 @@ h1 {
     text-align: center;
 }
 
-.q_post {
-    background-color: #fff;
-    padding: 50px;
-    border-radius: 8px;
+.qpost {
+    background-color: #f0f0f0;
     width: 300px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    height: 200px;
+    border: 1px solid #000;
 }
 
 label {
@@ -37,7 +34,7 @@ button {
     display: inline-block;
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #e4cf17;
     color: #fff;
     border: none;
     border-radius: 4px;
