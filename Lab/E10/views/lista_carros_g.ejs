@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/listar_carros">Listar</a>
+
+<a href="/gerencia/cadastro_carro.html">Cadastrar Carro</a>
+<a href="/gerencia/remocao_carro.html">Remover Carro</a>
+<a href="/gerencia/atualizacao_carro.html">Atualizar dados do carro</a>
+<a href="/gerencia/cadastro.html">Retornar para pagina de login Usuario</a>
+
+  <h2>Lista de carros atual:</h2>
+  
+  <%for (var i = 0; i < carros.length; i++){%>
+  <div>
+    <p>Marca: <%= carros[i].db_marca %></p>
+    <p>Modelo: <%= carros[i].db_modelo %></p>
+    <p>Ano: <%= carros[i].db_ano %></p>
+    <p>Quantidade: <%= carros[i].db_quantidade %></p>
+    <br>
+  </div>
+  <%}%>
+  
+  
+</body>
+</html>
