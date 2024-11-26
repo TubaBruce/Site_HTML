@@ -187,3 +187,24 @@ app.post("/remover_carro", function(req, resp) {
       };
     });
 });
+
+app.post("/comprar", function(req, resp) {
+  console.log(req.body);
+  const qtd_disponivel_inst = parseInt(req.body.qtd_disponivel, 10)
+  const qtd_disponivel_nova = (qtd_disponivel_inst - 1).toString();
+  console.log(qtd_disponivel_nova);
+  // atualiza senha do usuário
+  client.db("FDB").collection("Carros").updateOne(
+      { db_marca: req.body.marca, db_modelo: req.body.modelo, db_ano: req.body.ano, db_qtd: req.body.qtd_disponivel },
+      { $set: {db_qtd: qtd_disponivel_nova} }, function (err, result) {
+        console.log(req.body);
+        if (result.modifiedCount == 0) {
+          resp.render('resposta.ejs', {resposta: "Erro", mensagem:"Carro não encontrado"})
+        }else if (err) {
+          resp.render('resposta.ejs', {resposta: 'Erro', mensagem:"Carro não cadastrado"} ); 
+          }else {
+          resp.render('resposta.ejs', {resposta: 'Sucesso', mensagem:"Carro Atualizado!"} );
+      };
+  });
+
+});
